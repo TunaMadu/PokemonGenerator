@@ -2,6 +2,7 @@ import { useReducer } from "react";
 import Button from "./ui/Button";
 import PokemonDisplay from "./features/PokemonDisplay";
 import { pokemonApi } from "./utils/helpers/helpers";
+import GlobalStyle from "./styles/GlobalStyles";
 
 const initialState = {
   isActive: false,
@@ -53,19 +54,22 @@ function App() {
   }
 
   return (
-    <main>
-      <h1>Generate a random pokemon!</h1>
+    <>
+      <GlobalStyle />
+      <main>
+        <h1>Generate a random pokemon!</h1>
 
-      <Button handleOnClick={onShow}>
-        {!isActive ? "Start generating today" : <>&larr;</>}
-      </Button>
+        <Button handleOnClick={onShow}>
+          {!isActive ? "Start generating today" : <>&larr;</>}
+        </Button>
 
-      {isActive && (
-        <Button handleOnClick={onGenerate}>{"Generate a pokemon!"}</Button>
-      )}
+        {isActive && (
+          <Button handleOnClick={onGenerate}>{"Generate a pokemon!"}</Button>
+        )}
 
-      {isLoading && <PokemonDisplay pokemon={pokemon} />}
-    </main>
+        {isLoading && <PokemonDisplay pokemon={pokemon} />}
+      </main>
+    </>
   );
 }
 
