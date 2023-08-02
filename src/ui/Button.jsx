@@ -6,9 +6,8 @@ const StyledButton = styled.button`
   font-weight: 600;
   padding: 1rem;
   border-radius: 1rem;
-  background-color: #234040;
+  background-color: #5251a4;
   color: white;
-  margin-inline: 1rem;
 `;
 
 function Button({ children, handleOnClick }) {

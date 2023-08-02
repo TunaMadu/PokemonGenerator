@@ -16,9 +16,11 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  color: black;
+  color: #FF6647;
   line-height: 1.5;
-  font-size: 1.6rem;
+  font-size: 2.6rem;
+  font-weight: 600;
+  background-color: #FFFBDB;
 }
 
 ul,li{
@@ -47,7 +49,7 @@ button {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   display: block;
 }
 

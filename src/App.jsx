@@ -3,6 +3,9 @@ import Button from "./ui/Button";
 import PokemonDisplay from "./features/PokemonDisplay";
 import { pokemonApi } from "./utils/helpers/helpers";
 import GlobalStyle from "./styles/GlobalStyles";
+import Header from "./ui/Header";
+import AppLayout from "./features/AppLayout";
+import Container from "./ui/Container";
 
 const initialState = {
   isActive: false,
@@ -56,19 +59,22 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <main>
-        <h1>Generate a random pokemon!</h1>
 
-        <Button handleOnClick={onShow}>
-          {!isActive ? "Start generating today" : <>&larr;</>}
-        </Button>
+      <AppLayout>
+        <Header />
 
-        {isActive && (
-          <Button handleOnClick={onGenerate}>{"Generate a pokemon!"}</Button>
-        )}
+        <Container>
+          <Button handleOnClick={onShow}>
+            {!isActive ? "Start generating today" : <>&larr;</>}
+          </Button>
+
+          {isActive && (
+            <Button handleOnClick={onGenerate}>{"Generate a pokemon!"}</Button>
+          )}
+        </Container>
 
         {isLoading && <PokemonDisplay pokemon={pokemon} />}
-      </main>
+      </AppLayout>
     </>
   );
 }
